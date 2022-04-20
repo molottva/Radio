@@ -1,23 +1,20 @@
 package ru.netology.domain;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@Data
 public class Radio {
-    final int maxStation;
+    private int maxStation = 9;
     static final int minStation = 0;
     private int currentStation;
     static final int maxVolume = 100;
     static final int minVolume = 0;
     private int currentVolume = 30;
 
-    public Radio() { //по умолчанию
-        this.maxStation = 9;
-    }
-
     public Radio(int counterStation) { //изменения кол-ва станций
         this.maxStation = counterStation - 1;
-    }
-
-    public int getCurrentStation() {
-        return currentStation;
     }
 
     public void setCurrentStation(int currentStation) {
@@ -41,10 +38,6 @@ public class Radio {
         } else {
             this.currentStation = currentStation - 1;
         }
-    }
-
-    public int getCurrentVolume() {
-        return currentVolume;
     }
 
     public void setCurrentVolume(int currentVolume) {
